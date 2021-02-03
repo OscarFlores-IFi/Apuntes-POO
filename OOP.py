@@ -14,15 +14,19 @@ class YourClass(object):
         
     def change_classy (self, value):
         self.classy = 'other value'
+        YourClass.classy = 'class attribute has changed'
         
 asdf = YourClass()
 print(asdf.classy) #instance attribute
+
+del asdf.classy
+print(asdf.classy) #class attribute
 
 asdf.change_classy('other attribute')
 print(asdf.classy) #other attribute
 
 del asdf.classy
-print(asdf.classy) #class attribute
+print(asdf.classy) #class attribute has changed
 
 asdf.classy = 'broken encapsulation attribute'
 print(asdf.classy) #broken encapsulation attribute
